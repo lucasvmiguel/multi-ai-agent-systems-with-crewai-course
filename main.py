@@ -9,6 +9,7 @@ from crewai import Agent, Task, Crew, LLM
 # print(model.invoke("when Brazil was discovered?"))
 
 llm = LLM(model="ollama/llama3.2")
+# llm = LLM(model="ollama/deepseek-r1:1.5b")
 
 
 planner = Agent(
