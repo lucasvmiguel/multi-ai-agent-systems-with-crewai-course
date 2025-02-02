@@ -1,2 +1,4 @@
-crewai==0.100.0
-langchain_community==0.0.20
+crewai
+langchain_community
+crewai[tools]
+ollama

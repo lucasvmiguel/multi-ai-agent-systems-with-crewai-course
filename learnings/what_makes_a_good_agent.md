@@ -43,3 +43,7 @@ Lives in a separate database and it can shared accross different crew executions
 #### Entity Memory
 
 Very similar to short term memory, but it's related to the subjects of a crew execution
+
+## Tips
+
+- It's usually a good pattern to create agents to work as QA to verify if the executor agents are performing well
