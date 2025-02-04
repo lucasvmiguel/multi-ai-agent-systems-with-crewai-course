@@ -9,10 +9,17 @@ from crewai_tools import SerperDevTool, \
 
 llm = LLM(model="ollama/llama3.2")
 
+# import os
+# os.environ["OPENAI_API_KEY"] = "..."
+# os.environ["OPENAI_MODEL_NAME"] = 'gpt-3.5-turbo'
+
+
+           
+           
+
 # search_tool = SerperDevTool()
-# scrape_tool = ScrapeWebsiteTool()
-docs_scrape_tool = WebsiteSearchTool(
-    website_url="https://docs.crewai.com/how-to/Creating-a-Crew-and-kick-it-off/",
+docs_scrape_tool = ScrapeWebsiteTool(
+    website_url="https://docs.crewai.com/installation",
     config=dict(
         llm=dict(
             provider="ollama",
@@ -28,6 +35,23 @@ docs_scrape_tool = WebsiteSearchTool(
         ),
     )
 )
+# docs_scrape_tool = WebsiteSearchTool(
+#     website_url="https://docs.crewai.com/installation",
+#     config=dict(
+#         llm=dict(
+#             provider="ollama",
+#             config=dict(
+#                 model="llama3.2"
+#             ),
+#         ),
+#         embedder=dict(
+#             provider="ollama",
+#             config=dict(
+#                 model="llama3.2"
+#             ),
+#         ),
+#     )
+# )
 
 
 support_agent = Agent(
@@ -134,8 +158,10 @@ crew = Crew(
 crew.kickoff(inputs={
     "customer": "Awesome Company",
     "person": "Lucas",
-    "inquiry": "I need help with setting up a Crew "
-               "and kicking it off, specifically "
-               "how can I add memory to my crew? "
-               "Can you provide guidance?"
+    # "inquiry": "I need help with setting up a Crew "
+    #            "and kicking it off, specifically "
+    #            "how can I add memory to my crew? "
+    #            "Can you provide guidance?"
+    "inquiry": "I am having trouble installing the CrewAI SDK, "
+               "can you help me with that?"
 })
